@@ -27,7 +27,7 @@ function ajouterAdmin($pseudoAdmin,$nomAdmin,$prenomAdmin,$emailAdmin,$passAdmin
 		if ($pseudoExist !=0) $objectErreur->initialiserErreur("pseudo ou mail déja existant" , 0);
 		else
 		{
-			$insertAdmin= mysql_query("INSERT INTO admin (pseudo_admin,nom_admin,prenom_admin,email_admin,password_admin,type_admin) VALUE ('$pseudoAdmin','$nomAdmin','$prenomAdmin','$emailAdmin','$passAdmin','$roleAdmin')") or die(mysql_query());
+			$insertAdmin= mysql_query("INSERT INTO admin (pseudo_admin,nom_admin,prenom_admin,email_admin,password_admin,type_admin) VALUE ('$pseudoAdmin','$nomAdmin','$prenomAdmin','$emailAdmin','$passAdmin','$roleAdmin')") or die(mysql_error());
 			if($insertAdmin) $objectErreur->initialiserErreur("Enregistrement avec succée." , 1);
 			else $objectErreur->initialiserErreur("Erreur durant l'enregistrememt." , 0);
 		}
@@ -77,10 +77,10 @@ function modifierProfil($idAdmin, $pseudoAdmin,$nomAdmin,$prenomAdmin,$emailAdmi
 				{
 					$objectErreur->initialiserErreur("Modification avec succèe." , 1);
 					
-					$_SESSION["PSEUDO_USER"] = $pseudoAdmin;
-					$_SESSION["EMAIL_USER"] = $emailAdmin;
-					$_SESSION["NOM_USER"] = $nomAdmin;
-					$_SESSION["PRENOM_USER"] = $prenomAdmin;
+					$_SESSION["PSEUDO_ADMIN_ACC_VAL"] = $pseudoAdmin;
+					$_SESSION["MAIL_ADMIN_ACC_VAL"] = $emailAdmin;
+					$_SESSION["NOM_ADMIN_ACC_VAL"] = $nomAdmin;
+					$_SESSION["PRENOM_ADMIN_ACC_VAL"] = $prenomAdmin;
 					
 				}
 				
@@ -98,7 +98,7 @@ function modifierPass($idAdmin,$actualPass,$nouveauPass,$confirmPass)
 		$objectErreur = new myClassErreur();
 		if (empty($actualPass) or empty($nouveauPass) or empty($confirmPass)) 
 		$objectErreur->initialiserErreur("Veuillez remplir tout les champs." , 0);
-		elseIf (md5($actualPass) != $_SESSION["PASS_USER"])
+		elseIf (md5($actualPass) != $_SESSION["PASS_ADMIN_ACC_VAL"])
 		{
 		$objectErreur->initialiserErreur("Votre mot de passe actuel est incorrect." , 0);
 		}
@@ -116,7 +116,7 @@ function modifierPass($idAdmin,$actualPass,$nouveauPass,$confirmPass)
 					{
 						$objectErreur->initialiserErreur("Modification avec succèe." , 1);
 						
-						$_SESSION["PASS_USER"] = $nouveauPass;
+						$_SESSION["PASS_ADMIN_ACC_VAL"] = $nouveauPass;
 						
 						
 					}

@@ -1,4 +1,8 @@
+<?php
+include('afficherPage.php');
+include('afficherActualite.php');
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,23 +20,19 @@
 <script type="text/javascript" src="jsb/tms_presets.js"></script>
 <script type="text/javascript" src="jsb/script.js"></script>
 <script type="text/javascript" src="jsb/atooltip.jquery.js"></script> 
-<style>
-.slider .pic {
-				float:left !important;
-				}
-				
-.slider .pagination {
-					left: 750px !important;	}
-						
-.banner {
-			left: 650px !important;;
-			}
-</style>
+
 
 </head>
 
 <body >
 [slider]
+
+<br>
+[page]
+
+<br>
+[actualite]
+
 
 </body>
 </html>

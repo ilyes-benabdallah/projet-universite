@@ -48,12 +48,12 @@ include('../inc/administrateurs.php');
 							<td class="">
 												
 							<button type="button" class="btn btn-success" onclick="window.location.replace('ModifierUtilisateur.php?administrateur=<?php echo $idAdmin; ?>#admin');" >Modifier</button> &nbsp;
-							<?php if(($_SESSION["ID_USER"] != $idAdmin ) or ($typeAdmin == "administrateur")){ ?>
+							<?php if(($_SESSION["ID_ADMIN_ACC_VAL"] != $idAdmin ) or ($typeAdmin == "administrateur")){ ?>
 							<img  src="../img/del.png" onclick="$('#sup<?php echo $idAdmin; ?>').toggle('slow');" style="cursor: pointer;" />
 							<?php  } ?>					
 												
 							</td>
-					</tr><?php if(($_SESSION["ID_USER"] != $idAdmin ) or ($typeAdmin == "administrateur")){ ?>
+					</tr><?php if(($_SESSION["ID_ADMIN_ACC_VAL"] != $idAdmin ) or ($typeAdmin == "administrateur")){ ?>
 					<tr class="danger" id="sup<?php echo $idAdmin; ?>" style="display: none;">
 									<td colspan="3"> êtes vous sur de vouloir supprimer cet administrateur ?</td>
 									<td><button type="submit" class="btn btn-danger"  name="supprimerAdmin<?php echo $idAdmin; ?>" >Oui, je supprime !</button></td>

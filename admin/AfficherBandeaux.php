@@ -10,7 +10,10 @@ include('load.php');
  ?>	  
 <div class="text-left" href="#page">
 <h3>Bandeaux<small> Mes bandeaux</small></h3>
-		  
+	
+	
+	
+  
 <br>
 
 	<table class="table table-hover">

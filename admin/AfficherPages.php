@@ -1,4 +1,4 @@
-	²
+
  <?php 
 
 include('load.php');
@@ -25,7 +25,7 @@ include('load.php');
 		</thead>
 		<tbody>
 			<?php 
-			$getPage = mysql_query("SELECT * FROM page WHERE parent_page = 0 AND status_page <> '-1' ".$objectRole->myPagesDisplay()." ORDER BY date_page DESC") or die(mysql_error());
+			$getPage = mysql_query("SELECT * FROM page WHERE parent_page = 0 AND status_page <> '-1' ORDER BY date_page DESC") or die(mysql_error());
 			$numGetPage = mysql_num_rows($getPage);
 			while ($result=mysql_fetch_array($getPage))
 			{
@@ -67,7 +67,7 @@ include('load.php');
 				</form>
 
 	<?php 
-				$getPageNiveauDeux = mysql_query("SELECT * FROM page WHERE parent_page = $IDPage AND status_page <> '-1' ".$objectRole->myPagesDisplay()." ORDER BY date_page DESC") or die(mysql_error());
+				$getPageNiveauDeux = mysql_query("SELECT * FROM page WHERE parent_page = $IDPage AND status_page <> '-1' ORDER BY date_page DESC") or die(mysql_error());
 				$numGetPageNiveauDeux = mysql_num_rows($getPageNiveauDeux);
 				while ($resultNiveauDeux=mysql_fetch_array($getPageNiveauDeux))
 				{
@@ -104,7 +104,7 @@ include('load.php');
 					</form> 
 
 	<?php 
-					$getPageNiveauTrois = mysql_query("SELECT * FROM page WHERE parent_page = $IDPageNiveauDeux AND status_page <> '-1' ".$objectRole->myPagesDisplay()." ORDER BY date_page DESC") or die(mysql_error());
+					$getPageNiveauTrois = mysql_query("SELECT * FROM page WHERE parent_page = $IDPageNiveauDeux AND status_page <> '-1' ORDER BY date_page DESC") or die(mysql_error());
 					$numGetPageNiveauTrois = mysql_num_rows($getPageNiveauTrois);
 					while ($resultNiveauTrois=mysql_fetch_array($getPageNiveauTrois))
 					{

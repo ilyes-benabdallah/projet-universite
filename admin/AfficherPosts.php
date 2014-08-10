@@ -78,17 +78,9 @@ $objectErreur->afficherErreurs();
 							<td class=""><?php echo $dateActualite; ?></td>
 							<td class="">
 							
-							<?php 
-							
-							//if (($validation == 1) and ($statusActualite == 2))  { 
-							
-							
-							
-							?>
-								 <button type="button" class="btn btn-success" onclick="window.location.replace('ModifierPosts<?php if (($statusActualite == 2) or ($validation != 1)) echo "Validation"; ?>.php?monpost=<?php echo $IDActualite; ?>#actualite');" >Modifier</button> &nbsp;
-									<?php // }
-
-									?>
+							<?php if (($validation == 1) and ($statusActualite == 2))  { ?>
+								 <button type="button" class="btn btn-success" onclick="window.location.replace('ModifierPosts<?php if (($statusActualite == 2) or ($validationActualite != 1)) echo "Validation"; ?>.php?monpost=<?php echo $IDActualite; ?>#actualite');" >Modifier</button> &nbsp;
+									<?php } ?>
 									<img  src="../img/del.png" onclick="$('#sup<?php echo $IDActualite; ?>').toggle('slow');" style="cursor: pointer;" />
 							
 							</td>

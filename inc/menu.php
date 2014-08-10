@@ -6,7 +6,7 @@ class myClassMenuAdministration
 function menuAdminActualite()
 {
 
-							$myRole = $_SESSION["ROLE_USER"];
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
 							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' ") or die(mysql_error());
 							if (mysql_num_rows($getActions) != 0)
 							echo 	'<li id="actualite" class="files">
@@ -42,7 +42,7 @@ function menuAdminActualite()
 function menuAdminPage()
 {
 
-							$myRole = $_SESSION["ROLE_USER"];
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
 							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' ") or die(mysql_error());
 							if (mysql_num_rows($getActions) != 0)
 							echo 	'<li id="page" class="mail">
@@ -78,7 +78,7 @@ function menuAdminPage()
 function menuAdminBandeaux()
 {
 
-							$myRole = $_SESSION["ROLE_USER"];
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
 							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' ") or die(mysql_error());
 							if (mysql_num_rows($getActions) != 0)
 							echo 	'<li id="bandeau" class="cloud">
@@ -113,7 +113,7 @@ function menuAdminBandeaux()
 function menuAdminMedia()
 {
 
-							$myRole = $_SESSION["ROLE_USER"];
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
 							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' OR action_role = 'GestionMedia'  ") or die(mysql_error());
 							if (mysql_num_rows($getActions) != 0)
 							echo 	'<li id="media" class="files">
@@ -128,7 +128,7 @@ function menuAdminMedia()
 function menuAdminAdmins()
 {
 
-							$myRole = $_SESSION["ROLE_USER"];
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
 							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' ") or die(mysql_error());
 							if (mysql_num_rows($getActions) != 0)
 							echo 	'<li id="admin" class="cloud">

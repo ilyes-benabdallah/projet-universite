@@ -58,13 +58,13 @@ $objectLogin->checkLoginIndex();
 			if ($verifierDataQuery && (mysql_num_rows($verifierDataQuery) != 0))
 			{
 				$getMyIdAdmin = mysql_fetch_assoc($verifierDataQuery);
-				$_SESSION["ID_USER"] = $getMyIdAdmin["id_admin"];
-				$_SESSION["PASS_USER"] = $getMyIdAdmin["password_admin"];
-				$_SESSION["PSEUDO_USER"] = $getMyIdAdmin["pseudo_admin"];
-				$_SESSION["EMAIL_USER"] = $getMyIdAdmin["email_admin"];
-				$_SESSION["NOM_USER"] = $getMyIdAdmin["nom_admin"];
-				$_SESSION["PRENOM_USER"] = $getMyIdAdmin["prenom_admin"];
-				$_SESSION["ROLE_USER"] = $getMyIdAdmin["type_admin"];
+				$_SESSION["ID_ADMIN_ACC_VAL"] = $getMyIdAdmin["id_admin"];
+				$_SESSION["PASS_ADMIN_ACC_VAL"] = $getMyIdAdmin["password_admin"];
+				$_SESSION["PSEUDO_ADMIN_ACC_VAL"] = $getMyIdAdmin["pseudo_admin"];
+				$_SESSION["MAIL_ADMIN_ACC_VAL"] = $getMyIdAdmin["email_admin"];
+				$_SESSION["NOM_ADMIN_ACC_VAL"] = $getMyIdAdmin["nom_admin"];
+				$_SESSION["PRENOM_ADMIN_ACC_VAL"] = $getMyIdAdmin["prenom_admin"];
+				$_SESSION["TYPE_ADMIN_ACC_VAL"] = $getMyIdAdmin["type_admin"];
 				header("location: dashboard.php");
 				//echo "<script>window.location.replace('Dashboard.php');</script>";
 				//exit;

@@ -20,7 +20,7 @@ function ajouterActualite ( $titreActualite, $contenuActualite, $langueActualite
 	$langueActualite = mysql_real_escape_string ($langueActualite);
 	$categorieActualite = mysql_real_escape_string ($categorieActualite);
 	$statusActualite = mysql_real_escape_string ($statusActualite);
-	$idAuteur = $_SESSION["ID_USER"];
+	$idAuteur = $_SESSION["ID_ADMIN_ACC_VAL"];
  
 if (empty($titreActualite) or empty($contenuActualite) or ($langueActualite == "choix")  or ($categorieActualite == "choix")) 
 {

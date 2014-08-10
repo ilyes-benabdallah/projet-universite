@@ -5,7 +5,7 @@ include('../inc/administrateurs.php');
 
 
 if (isset($_POST['submit'])){
-$idAdmin=$_SESSION["ID_USER"];
+$idAdmin=$_SESSION["ID_ADMIN_ACC_VAL"];
 $pseudoAdmin=$_POST['pseudoAdmin'];
 $nomAdmin=$_POST['nomAdmin'];
 $prenomAdmin=$_POST['prenomAdmin'];
@@ -29,25 +29,25 @@ $objectAdmin->modifierProfil($idAdmin,$pseudoAdmin,$nomAdmin,$prenomAdmin,$email
 		<form action="modifierProfil.php#admin" method="POST" >
 		<div class="form-group">
 			<label for="exampleInputEmail1">Pseudo</label>
-			<input type="text" class="form-control" value='<?php if (isset($_POST['pseudoAdmin'])) echo $_POST['pseudoAdmin']; else echo $_SESSION["PSEUDO_USER"]; ?>' name="pseudoAdmin" placeholder="Saisir le pseudonyme">
+			<input type="text" class="form-control" value='<?php if (isset($_POST['pseudoAdmin'])) echo $_POST['pseudoAdmin']; else echo $_SESSION["PSEUDO_ADMIN_ACC_VAL"]; ?>' name="pseudoAdmin" placeholder="Saisir le pseudonyme">
 		</div>
 		
 		
 		<div class="form-group">
 			<label for="exampleInputEmail1">Nom</label>
-			<input type="text" class="form-control" name="nomAdmin" value='<?php if (isset($_POST['nomAdmin'])) echo $_POST['nomAdmin']; else echo $_SESSION["NOM_USER"]; ?>' placeholder="Saisir le nom">
+			<input type="text" class="form-control" name="nomAdmin" value='<?php if (isset($_POST['nomAdmin'])) echo $_POST['nomAdmin']; else echo $_SESSION["NOM_ADMIN_ACC_VAL"]; ?>' placeholder="Saisir le nom">
 		</div>
 		
 		
 		<div class="form-group">
 			<label for="exampleInputEmail1">Prénom</label>
-			<input type="text" class="form-control" name="prenomAdmin" value='<?php if (isset($_POST['prenomAdmin'])) echo $_POST['prenomAdmin']; else echo $_SESSION["PRENOM_USER"]; ?>' placeholder="Saisir le prénom">
+			<input type="text" class="form-control" name="prenomAdmin" value='<?php if (isset($_POST['prenomAdmin'])) echo $_POST['prenomAdmin']; else echo $_SESSION["PRENOM_ADMIN_ACC_VAL"]; ?>' placeholder="Saisir le prénom">
 		</div>
 		
 		
 		<div class="form-group">
 			<label for="exampleInputEmail1">Email</label>
-			<input type="email" class="form-control" name="emailAdmin" value='<?php if (isset($_POST['emailAdmin'])) echo $_POST['emailAdmin']; else echo $_SESSION["EMAIL_USER"]; ?>' placeholder="Saisir l'Email">
+			<input type="email" class="form-control" name="emailAdmin" value='<?php if (isset($_POST['emailAdmin'])) echo $_POST['emailAdmin']; else echo $_SESSION["MAIL_ADMIN_ACC_VAL"]; ?>' placeholder="Saisir l'Email">
 		</div>
 				<br>
 		<button type="submit" name="submit" class="btn btn-primary btn-block" >Modifier</button>

@@ -5,7 +5,7 @@ include('../inc/administrateurs.php');
 
 
 if (isset($_POST['submitPass'])){
-$idAdmin=$_SESSION["ID_USER"];
+$idAdmin=$_SESSION["ID_ADMIN_ACC_VAL"];
 $actuelPass=$_POST['actuelPass'];
 $nouveauPass=$_POST['nouveauPass'];
 $confirmPass=$_POST['confirmPass'];

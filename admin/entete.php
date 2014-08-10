@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -27,7 +29,6 @@
 
 	
 	    <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
-		
 		<script>
 
 			tinymce.init({
@@ -69,13 +70,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php echo 'M. '.$_SESSION["NOM_USER"].' '.$_SESSION["PRENOM_USER"]; ?></a>
+          <a class="navbar-brand" href="#"><?php echo 'M. '.$_SESSION["NOM_ADMIN_ACC_VAL"].' '.$_SESSION["PRENOM_ADMIN_ACC_VAL"]; ?></a>
         </div>
         <div class="navbar-collapse collapse" style="height: 1px;">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Panneau</a></li>
             <li><a href="#">paramètres</a></li>
-            <li><a href="ModifierUtilisateur.php?administrateur=<?php echo $_SESSION["ID_USER"]; ?>">Profile</a></li>
+            <li><a href="ModifierUtilisateur.php?administrateur=<?php echo $_SESSION["ID_ADMIN_ACC_VAL"]; ?>">Profile</a></li>
             <li><a href="#">Aides</a></li>
           </ul>
           <form class="navbar-form navbar-right">

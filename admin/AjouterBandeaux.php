@@ -208,7 +208,10 @@ if(isset($_POST["publier"]) )
 	}
 }
 ?>
-		
+    <script language="javascript"> 
+     function maxlength(text,length) {if(text.innerText.length>length) text.innerText=text.innerText.substr(0,length); } 
+    </script>	
+	
 <div class="text-left" href="#page">
 <h3>Bandeaux<small> Ajouter des bandeaux</small></h3>
 <br>
@@ -222,7 +225,7 @@ if(isset($_POST["publier"]) )
 		<br>	
 		<div>
 			<div class="input-group-addon">Description</div>
-			<textarea  id="description" name="descriptionBandeau" class="form-control" rows="3" cols="80"  placeholder="Ajouter votre description ici"><?php  if (isset($_POST["descriptionBandeau"])) echo $_POST["descriptionBandeau"]; ?></textarea>
+			<textarea  onkeypress="javascript:maxlength(this,10);" id="description" name="descriptionBandeau" class="form-control" rows="3" cols="80"  placeholder="Ajouter votre description ici"><?php  if (isset($_POST["descriptionBandeau"])) echo $_POST["descriptionBandeau"]; ?></textarea>
 		</div>
 		<br>
 		

@@ -6,12 +6,12 @@ $mysql_hostname = "localhost";
 
 
 //  utilisateur de la base de données
-$mysql_utilisateur = "Vbeta1";
+$mysql_utilisateur = "root";
 
 
 
 //  mot de passe d'utilisateur de la abase de donnée
-$mysql_pass = "hhhhh";  
+$mysql_pass = "";  
 
 
 

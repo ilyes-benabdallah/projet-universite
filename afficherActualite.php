@@ -1,5 +1,5 @@
 <?php
-include('config/db.php');
+//include('config/db.php');
 include('remplacer.php');
 class myClassAfficherActualite
 {
@@ -25,13 +25,12 @@ class myClassAfficherActualite
 		
 		$code=$code."<strong>".$titreActualite."</strong><br><span>".$dateActualite.".</span><br><p><span>".$contenuActualite.".</span></p></div></li><br>";
 		
-		
-	
-				
-					$objetRemplacer = new myClassRemplacer();
+		$objetRemplacer = new myClassRemplacer();
 					
-					$objetRemplacer->remplacerHtml($motRemplacer,$code,$lienPage);
+	    $objetRemplacer->remplacerHtml($motRemplacer,$code,$lienPage);
+		
 	}
+	
 }
 
 // $objectAfficherActualite= new myClassAfficherActualite();

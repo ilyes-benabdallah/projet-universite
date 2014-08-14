@@ -23,11 +23,19 @@ $objectMenu = new myClassMenuAdministration();
 							//menu Media
 							$objectMenu->menuAdminMedia();
 							
+							//menu Menu
+							$objectMenu->menuAdminMenu();
+							
+							
+							
 							//menu Admins
 							$objectMenu->menuAdminBandeaux();
 							
 							//menu Admins
 							$objectMenu->menuAdminAdmins();
+							
+							//menu Gérer les utilisateur
+							$objectMenu->menuGererUtilisateurs();
 						?> 
 						
 				

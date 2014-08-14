@@ -28,13 +28,14 @@ class myClassAfficherBandeau
 		
 		$codeSlider="<div class='main'><article id='content'><div class='slider_bg'><div class='slider'><ul class='items'>".$code."</ul></div></div></article></div>";
 				
-					$objetRemplacer = new myClassRemplacer();
 					
-					$objetRemplacer->remplacerHtml($motRemplacer,$codeSlider,$lienPage);
 	}
+	$objetRemplacer = new myClassRemplacer();
+					
+    $objetRemplacer->remplacerHtml($motRemplacer,$codeSlider,$lienPage);
 }
-include('config/db.php');
-$objectAfficherBandeau= new myClassAfficherBandeau();
-$objectAfficherBandeau->afficherBandeau();
+// include('config/db.php');
+// $objectAfficherBandeau= new myClassAfficherBandeau();
+// $objectAfficherBandeau->afficherBandeau();
 
 ?>

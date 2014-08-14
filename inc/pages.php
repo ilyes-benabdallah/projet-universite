@@ -28,9 +28,9 @@ else
 		{
 			$requete = mysql_query("INSERT INTO page (titre_page,contenu_page, langue_page,status_page,parent_page) VALUES ('$titrePage','$contenuPage', '$languePage','$statusPage','$parentPage')") or die(mysql_error());
 			$idPageMenu=mysql_insert_id();
-			$requeteMenu = mysql_query("INSERT INTO menu (titre_menu,id_page_menu, parent_menu, status_menu) VALUES ('$titrePage','$idPageMenu', '$parentPage', '$statusPage')") or die(mysql_error());
+			//$requeteMenu = mysql_query("INSERT INTO menu (titre_menu,id_page_menu, parent_menu, status_menu) VALUES ('$titrePage','$idPageMenu', '$parentPage', '$statusPage')") or die(//mysql_error());
 
-			if ($requete && $requeteMenu )
+			if ($requete )//&& $requeteMenu )
 			{
 				$_SESSION["MESSAGES_CAT_SUCCES"] = "Votre page a été enregistré avec succès, vous pouvez la modifier ici";
 				header('location: ModifierPages.php?mapage='.$idPageMenu.'#page');
@@ -58,9 +58,9 @@ function modifierPage ( $idPage, $titrePage, $contenuPage, $languePage, $statusP
 	else 
 			{
 				$requete = mysql_query("UPDATE page SET titre_page='$titrePage' ,contenu_page='$contenuPage', langue_page='$languePage', status_page='$statusPage', parent_page='$parentPage' WHERE id_page='$idPage'") or die(mysql_error());
-				$requeteMenu = mysql_query("UPDATE  menu SET titre_menu='$titrePage', parent_menu='$parentPage', status_menu='$statusPage' WHERE id_page_menu=' $idPage'") or die(mysql_error());
+				//$requeteMenu = mysql_query("UPDATE  menu SET titre_menu='$titrePage', parent_menu='$parentPage', status_menu='$statusPage' WHERE id_page_menu=' $idPage'") or die(mysql_error());
 
-				if ($requete && $requeteMenu)
+				if ($requete )//&& $requeteMenu)
 				{
 					$objectErreur->initialiserErreur("Votre page a été enregistré avec succès" , 1);
 				} else 
@@ -101,8 +101,8 @@ function supprimerPage ( $idPage )
 {
 	$objectErreur = new myClassErreur();
 	$requetePage = mysql_query("UPDATE page SET status_page='-1' WHERE id_page='$idPage'") or die(mysql_error());
-	$requeteMenu = mysql_query("UPDATE menu SET status_menu='-1' WHERE id_page_menu='$idPage'") or die(mysql_error());
-				if ($requetePage && $requeteMenu)
+	//$requeteMenu = mysql_query("UPDATE menu SET status_menu='-1' WHERE id_page_menu='$idPage'") or die(mysql_error());
+				if ($requetePage)// && $requeteMenu)
 				{
 					
 					$objectErreur->initialiserErreur("Votre page a été supprimé avec succès", 1);
@@ -127,8 +127,8 @@ function supprimerPageDifinitivement ($idPage)
 	}*/
 	$objectErreur = new myClassErreur();
 	$requetePage = mysql_query("DELETE FROM page WHERE id_page='$idPage'") or die(mysql_error());
-	$requeteMenu = mysql_query("DELETE FROM menu WHERE id_page_menu='$idPage'") or die(mysql_error());
-				if ($requetePage && $requeteMenu)
+	//$requeteMenu = mysql_query("DELETE FROM menu WHERE id_page_menu='$idPage'") or die(mysql_error());
+				if ($requetePage )//&& $requeteMenu)
 				{
 					
 					$objectErreur->initialiserErreur("Votre page a été supprimé avec succès", 1);
@@ -151,8 +151,8 @@ function modifierParentPage($idPage, $idParent)
 		else
 		{
 			$requeteChangeParent = mysql_query("UPDATE page SET parent_page = '$idParent' WHERE parent_page ='$idPage'") or die(mysql_error());
-			$requeteChangeMenu = mysql_query("UPDATE menu SET parent_menu = '$idParent' WHERE parent_menu ='$idPage'") or die(mysql_error());
-			if ($requeteChangeParent && $requeteChangeMenu )
+			//$requeteChangeMenu = mysql_query("UPDATE menu SET parent_menu = '$idParent' WHERE parent_menu ='$idPage'") or die(mysql_error());
+			if ($requeteChangeParent)// && $requeteChangeMenu )
 			{
 				myClassPage::supprimerPage ($idPage);	
 				header("location: AfficherPages.php");

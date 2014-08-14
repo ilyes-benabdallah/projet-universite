@@ -1,6 +1,7 @@
 <?php
 include('afficherPage.php');
 include('afficherActualite.php');
+include('afficherMenu.php');
 
 ?>
 <!DOCTYPE html>
@@ -11,6 +12,8 @@ include('afficherActualite.php');
 <link rel="stylesheet" href="cssb/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="cssb/layout.css" type="text/css" media="all">
 <link rel="stylesheet" href="cssb/style.css" type="text/css" media="all">
+<link href="css/styleMenu.css" rel="stylesheet" />
+
 <script type="text/javascript" src="jsb/jquery-1.6.js" ></script>
 <script type="text/javascript" src="jsb/cufon-yui.js"></script>
 <script type="text/javascript" src="jsb/cufon-replace.js"></script>  
@@ -26,6 +29,10 @@ include('afficherActualite.php');
 
 <body >
 [slider]
+
+<br>
+[menu]
+
 
 <br>
 [page]

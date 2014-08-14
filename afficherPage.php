@@ -1,6 +1,6 @@
 <?php
-include('config/db.php');
-//include('remplacer.php');
+//include('config/db.php');
+include('remplacer.php');
 class myClassAfficherPage
 {
 	function afficherPage($id)
@@ -28,14 +28,14 @@ class myClassAfficherPage
 		
 		
 		
-				
-					$objetRemplacer = new myClassRemplacer();
+		$objetRemplacer = new myClassRemplacer();
+	    $objetRemplacer->remplacerHtml($motRemplacer,$code,$lienPage);		
 					
-					$objetRemplacer->remplacerHtml($motRemplacer,$code,$lienPage);
 	}
+	
 }
-// include('config/db.php');
-// $objectAfficherBandeau= new myClassAfficherPage();
-// $objectAfficherBandeau->afficherPage();
+ // include('config/db.php');
+ // $objectAfficherBandeau= new myClassAfficherPage();
+ // $objectAfficherBandeau->afficherPage();
 
 ?>

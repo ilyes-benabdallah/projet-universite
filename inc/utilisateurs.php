@@ -31,5 +31,32 @@ Class myClassUtilisateur
 			}
 		}
 	}
+	
+	function accepterUtilisateur($id)
+	{
+	$objectErreur = new myClassErreur();
+	$requeteUpdate= mysql_query("UPDATE utilisateur SET statut_utilisateur='1' WHERE id_utilisateur='$id'") or die (mysql_error());
+	if($requeteUpdate) header("location:AccepterUtilisateur.php");
+	else $objectErreur->initialiserErreur("Acceptation interrompu." , 0);
+	
+	} 
+	
+	function refuserUtilisateur($id)
+	{
+	$objectErreur = new myClassErreur();
+    $requeteDelete = mysql_query("DELETE FROM utilisateur WHERE id_utilisateur='$id'") or die (mysql_error());
+	if($requeteDelete) header("location:AccepterUtilisateur.php");
+	else $objectErreur->initialiserErreur("Acceptation interrompu." , 0);
+	
+	} 
+	
+	function supprimerUtilisateur($id)
+	{
+	$objectErreur = new myClassErreur();
+    $requeteDelete = mysql_query("DELETE FROM utilisateur WHERE id_utilisateur='$id'") or die (mysql_error());
+	if($requeteDelete) header("location:AfficherUtilisateur.php");
+	else $objectErreur->initialiserErreur("Acceptation interrompu." , 0);
+	
+	} 
 }
 ?>

@@ -125,6 +125,21 @@ function menuAdminMedia()
 
 }
 
+function menuAdminMenu()
+{
+
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
+							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' OR action_role = 'GestionMenu'  ") or die(mysql_error());
+							if (mysql_num_rows($getActions) != 0)
+							echo 	'<li id="menu" class="files">
+									<a href="AfficherMenu.php#menu">Menu</a>	
+									</li>';
+									
+						
+
+
+}
+
 function menuAdminAdmins()
 {
 
@@ -153,6 +168,43 @@ function menuAdminAdmins()
 										$ActionsURL = $row['nom_action'];
 										$ActionsAffichage = $row['afficher_menu'];
 										echo '<li><a href="'.$ActionsURL.'.php#admin"><em></em>'.$ActionsAffichage.'</a></li>';
+									}
+									echo '</ul></li>';
+								}
+							}
+
+
+}
+
+function menuGererUtilisateurs()
+{
+                           
+							$myRole = $_SESSION["TYPE_ADMIN_ACC_VAL"];
+							$getActions=mysql_query(" SELECT * FROM role WHERE type_admin_role = '$myRole' AND action_role = 'ALL' ") or die(mysql_error());
+							if (mysql_num_rows($getActions) != 0)
+							
+							echo 	'<li id="utilisateur" class="cloud">
+									<a href="#utilisateur">Gérer les utilisateurs</a>
+									<ul class="sub-menu">
+									<li><a href="AccepterUtilisateur.php#utilisateur"><em></em>Accepter les utilisateurs</a></li>
+									<li><a href="AfficherUtilisateur.php#utilisateur"><em></em>Afficher les utlisateurs</a></li>
+									
+									</ul>
+									</li>';
+										
+							else
+							{
+								$getActions = mysql_query("SELECT * FROM les_actions WHERE  groupe_action = 'Administrateurs' AND ordre_affichage <> 0 AND nom_action IN (SELECT action_role FROM role WHERE type_admin_role = '$myRole') ORDER BY ordre_affichage ASC") or die(mysql_error());
+								if (mysql_num_rows($getActions) != 0)
+								{
+									echo 	'<li id="utilisateur" class="cloud">
+											<a href="#utilisateur">Gérer les utilisateurs</a>
+											<ul class="sub-menu">';
+									while ($row = mysql_fetch_array($getActions))
+									{
+										$ActionsURL = $row['nom_action'];
+										$ActionsAffichage = $row['afficher_menu'];
+										echo '<li><a href="'.$ActionsURL.'.php#utilisateur"><em></em>'.$ActionsAffichage.'</a></li>';
 									}
 									echo '</ul></li>';
 								}
